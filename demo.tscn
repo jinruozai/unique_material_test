@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://d3wv4c2dm6h41"]
+
+[ext_resource type="Script" path="res://demo.gd" id="1_7vghg"]
+[ext_resource type="PackedScene" uid="uid://c3yb0iuik884r" path="res://plane.glb" id="2_1x0tt"]
+
+[node name="Demo" type="Node3D"]
+script = ExtResource("1_7vghg")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.0242552, 5.89848, -0.0632989)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.62347, 0.781847, 0, -0.781847, 0.62347, 0, 15.0956, 0)
+
+[node name="Plane1" parent="." instance=ExtResource("2_1x0tt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.04804, 0, 0)
+
+[node name="Plane" parent="Plane1" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.7643)
+
+[node name="Plane2" parent="." instance=ExtResource("2_1x0tt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7975, 0, 0)
+
+[node name="Plane" parent="Plane2" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.7643)
+
+[editable path="Plane1"]
+[editable path="Plane2"]
